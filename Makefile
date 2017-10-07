@@ -8,13 +8,15 @@
 # 'make clean'  removes all .o and executable files
 #
 
+# yes this is full of SPACES not tabs but seems to work?
+
 # define the C compiler to use
 #CC = gcc
 CXX = g++
 
 # define any compile-time flags
 #CFLAGS = -Wall -g
-CXXFLAGS = -g -std=c++11
+CXXFLAGS = -std=c++11 -Wall
 
 # define any directories containing header files other than /usr/include
 #
@@ -24,17 +26,17 @@ CXXFLAGS = -g -std=c++11
 # define library paths in addition to /usr/lib
 #   if I wanted to include libraries not in /usr/lib I'd specify
 #   their path using -Lpath, something like:
-#LFLAGS = -L/home/newhall/lib  -L../lib
+LDFLAGS = -L/home/justin/MakeTest/test/amazing_libs -lamazing_library
 
 # define any libraries to link into executable:
 #   if I want to link in libraries (libx.so or libx.a) I use the -llibname 
 #   option, something like (this will link in libmylib.so and libm.so:
-#LIBS = -lmylib -lm
+#LDLIBS = -lmylib -lm
 
 # define the C source files
 #SRCS = emitter.c error.c init.c lexer.c main.c symbol.c parser.c
 #SRCS = qs.cpp
-SRCS = const.cpp
+SRCS = amazing_main.cpp
 
 # define the C object files 
 #
@@ -49,7 +51,7 @@ SRCS = const.cpp
 # see below
 
 # define the executable file 
-MAIN = const
+MAIN = amazing
 
 OBJDIR = obj
 
