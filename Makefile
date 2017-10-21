@@ -21,11 +21,13 @@ CXXFLAGS = -std=c++11 -Wall
 # define any directories containing header files other than /usr/include
 #
 #INCLUDES = -I/home/newhall/include  -I../include
-	#INCLUDES = -I/home/newhall/include  -I../include
+#INCLUDES = -I/home/newhall/include  -I../include
+#INCLUDES = -I/home/newhall/include  -I../include
 
 # define library paths in addition to /usr/lib
 #   if I wanted to include libraries not in /usr/lib I'd specify
 #   their path using -Lpath, something like:
+#LDFLAGS = -L/home/justin/MakeTest/test/amazing_libs -lamazing_library
 #LDFLAGS = -L/home/justin/MakeTest/test/amazing_libs -lamazing_library
 
 # define any libraries to link into executable:
@@ -37,6 +39,7 @@ CXXFLAGS = -std=c++11 -Wall
 #SRCS = emitter.c error.c init.c lexer.c main.c symbol.c parser.c
 #SRCS = qs.cpp
 SRCS = threads.cpp
+#SRCS = amazing_main.cpp
 
 # define the C object files 
 #
@@ -52,6 +55,7 @@ SRCS = threads.cpp
 
 # define the executable file 
 MAIN = threads
+#MAIN = amazing
 
 OBJDIR = obj
 
