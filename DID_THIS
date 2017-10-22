@@ -7,6 +7,7 @@ g++ -shared -Wl,-soname,libamazing_library.so.1 -o libamazing_library.so.1 *.o -
 # -Wl,a,b,c means pass args "a b c" to linker ldd
 # used ld --verbose -L$(pwd)/amazing_libs -lamazing_library to find why linker couldn't find it my own dumb naming
 # object files and libs must be in dependency order ie. shove libs at end.
-g++ -std=c++11 -Wl,-rpath,$(pwd)/amazing_libs -Lamazing_libs/ -o amazing amazing_main.cpp -lamazing_library && ./amazing
+# AHHHH - actually source files(well objects) I believe now should be first!
+g++ -std=c++11 amazing_main.cpp -Wl,-rpath,$(pwd)/amazing_libs -Lamazing_libs/ -o amazing -lamazing_library && ./amazing
 # need to look into why not rpath, just needed to provide linker with lib dir
 # how would make a program s.t. requires to hook into lib at runtime? ie. using rpath?
