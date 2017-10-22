@@ -16,7 +16,7 @@ CXX = g++
 
 # define any compile-time flags
 #CFLAGS = -Wall -g
-CXXFLAGS = -std=c++11 -Wall
+CXXFLAGS = -std=c++14 -Wall
 
 # define any directories containing header files other than /usr/include
 #
@@ -38,7 +38,7 @@ CXXFLAGS = -std=c++11 -Wall
 # define the C source files
 #SRCS = emitter.c error.c init.c lexer.c main.c symbol.c parser.c
 #SRCS = qs.cpp
-SRCS = threads.cpp
+SRCS = my_queue.cpp
 #SRCS = amazing_main.cpp
 
 # define the C object files 
@@ -54,7 +54,7 @@ SRCS = threads.cpp
 # see below
 
 # define the executable file 
-MAIN = threads
+MAIN = my_queue
 #MAIN = amazing
 
 OBJDIR = obj

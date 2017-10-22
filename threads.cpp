@@ -27,6 +27,22 @@ class Safe_Q : Parent {
     public:
         Safe_Q() {}
 
+        bool empty() const {
+            return size() == 0;
+        }
+
+        std::size_t size() const {
+            return this->size();
+        }
+
+        T& front() {
+            return this->front();
+        }
+
+        const T& front() const {
+            return this->front();
+        }
+
         void push(const T& item) {
             std::unique_lock<std::mutex> lock(m_mut);
             sleep(10);
@@ -85,6 +101,7 @@ int main() {
     q.push(4);
     q.push(5);
     std::cout << q << "\n";
+    //std::cout << q.front() << "\n";
 
 }
 
